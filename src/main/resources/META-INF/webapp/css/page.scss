@@ -1,0 +1,28 @@
+$primaryColor: #e6e6e6;
+
+.pull-right{
+  float: right;
+}
+.outline-none{
+    outline: none;
+}
+.no-padding{
+  padding: 0;
+}
+.full-width{
+    width: 100%;
+}
+
+body{
+  background: $primaryColor;
+  font-family: inherit;
+  font-size: 14px;
+}
+.header{
+  border-bottom: 1px solid grey;
+}
+.container{
+  background: white;
+  border-right: 1px solid grey;
+  border-left: 1px solid grey;
+}
