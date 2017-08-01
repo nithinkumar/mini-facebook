@@ -1,5 +1,7 @@
 package server.dummy.domain;
 
+import javax.ws.rs.FormParam;
+
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
@@ -12,10 +14,21 @@ public class User {
 	@GraphId
 	private Long id;
 	
+	@FormParam("name")
 	@Property(name="name")
 	private String name;
+	
+	@FormParam("email")
 	@Property(name="email")
 	private String email;
+	
+	@FormParam("phone")
+	@Property(name="phone")
+	private Long phone;
+	
+	@FormParam("password")
+	@Property(name="password")
+	private String password;
 	
 	public Long getId() {
 		return id;
@@ -38,5 +51,17 @@ public class User {
 	
 	public String toString(){
 		return new StringBuffer("name: ").append(name).append(", email: ").append(email).toString();
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Long getPhone() {
+		return phone;
+	}
+	public void setPhone(Long phone) {
+		this.phone = phone;
 	}
 }

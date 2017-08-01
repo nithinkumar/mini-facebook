@@ -13,6 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jetty.version>8.1.10.v20130312</jetty.version>
+    <jersey.version>2.22.2</jersey.version>
     <spring.version>3.2.3.RELEASE</spring.version>
   </properties>
 
@@ -75,7 +76,14 @@
 	    <version>2.1.0</version>
 	    <scope>runtime</scope>
 	</dependency>
+	 <!-- had to add following cause it was throwing some validation exception -->
+	 <!-- org.springframework.validation.beanvalidation.LocalValidatorFactoryBean#0': Invocation of init method failed; nested exception is javax.validation.ValidationException -->
 	<dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>4.2.0.Final</version>
+   </dependency>
+	<!-- <dependency>
 		<groupId>com.sun.jersey</groupId>
 		<artifactId>jersey-bundle</artifactId>
 		<version>1.19</version>
@@ -112,6 +120,30 @@
 	      <artifactId>spring-web</artifactId>
 	    </exclusion>
 	  </exclusions>
+	</dependency> -->
+	<!-- moved from com.sun.jersey to org.glassfish.jersey to support beanparam -->
+	<dependency>
+		<groupId>org.glassfish.jersey.ext</groupId>
+		<artifactId>jersey-spring3</artifactId>
+		<version>${jersey.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.glassfish.jersey.containers</groupId>
+		<artifactId>jersey-container-servlet</artifactId>
+		<version>${jersey.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.glassfish.jersey.core</groupId>
+		<artifactId>jersey-client</artifactId>
+		<version>${jersey.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.glassfish.jersey.media</groupId>
+		<artifactId>jersey-media-multipart</artifactId>
+		<version>${jersey.version}</version>
 	</dependency>
   </dependencies>
   

@@ -1,4 +1,5 @@
 $primaryColor: #e6e6e6;
+$activeButtonColor: #337ab7;
 
 .pull-right{
   float: right;
@@ -10,7 +11,13 @@ $primaryColor: #e6e6e6;
   padding: 0;
 }
 .full-width{
-    width: 100%;
+  width: 100%;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.hide{
+  display: none;
 }
 
 body{
@@ -18,10 +25,25 @@ body{
   font-family: inherit;
   font-size: 14px;
 }
+.loginButtonDiv{
+  @extend .no-padding;
+  @extend .outline-none;
+}
 .header{
-  border-bottom: 1px solid grey;
+  margin-bottom: 20px;
+  button{
+    color: $activeButtonColor;
+    background: white;
+  }
+  .active{
+    button{
+      background: $activeButtonColor;
+      color: white;
+    }
+  }
 }
 .container{
+  min-height: 600px;
   background: white;
   border-right: 1px solid grey;
   border-left: 1px solid grey;

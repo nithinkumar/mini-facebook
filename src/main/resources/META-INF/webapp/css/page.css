@@ -1,14 +1,20 @@
 .pull-right {
   float: right; }
 
-.outline-none {
+.outline-none, .loginButtonDiv {
   outline: none; }
 
-.no-padding {
+.no-padding, .loginButtonDiv {
   padding: 0; }
 
 .full-width {
   width: 100%; }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.hide {
+  display: none; }
 
 body {
   background: #e6e6e6;
@@ -16,9 +22,16 @@ body {
   font-size: 14px; }
 
 .header {
-  border-bottom: 1px solid grey; }
+  margin-bottom: 20px; }
+  .header button {
+    color: #337ab7;
+    background: white; }
+  .header .active button {
+    background: #337ab7;
+    color: white; }
 
 .container {
+  min-height: 600px;
   background: white;
   border-right: 1px solid grey;
   border-left: 1px solid grey; }

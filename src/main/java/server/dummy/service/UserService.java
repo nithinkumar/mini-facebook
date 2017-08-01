@@ -5,12 +5,13 @@ import org.springframework.stereotype.Service;
 
 import server.dummy.dao.UserDao;
 import server.dummy.domain.User;
+import server.dummy.helper.HashHelper;
 
 @Service
 public class UserService {
 	
 	@Autowired
-	UserDao dao;
+	private UserDao dao;
 
 	public void dummy(){
 	}
@@ -21,5 +22,14 @@ public class UserService {
 	
 	public User getDataById(String id){
 		return dao.getUserById(Long.valueOf(id));
+	}
+	
+	public int getUserCountByEmailorPhone(String email, String phone){
+		return dao.getUserCountByEmailorPhone(email, phone);
+	}
+	
+	public void addUser(User user){
+		user.setPassword(HashHelper.getMd5(user.getPassword()));
+		dao.save(user);
 	}
 }

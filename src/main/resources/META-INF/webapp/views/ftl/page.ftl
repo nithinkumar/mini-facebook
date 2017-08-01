@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/page.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script  type="text/javascript" src="/js/index.js"></script>
     <div class="container">
       <div class="row">
@@ -19,10 +19,10 @@
         </div>
         <div class="col-md-6 col-lg-6">
           <div class="header row">
-            <div class="col-md-6 col-lg-6 no-padding">
+            <div class="col-md-6 col-lg-6 loginButtonDiv active">
               <button class="btn btn-default full-width">Sign Up</button>
             </div>
-            <div class="col-md-6 col-lg-6 no-padding">
+            <div class="col-md-6 col-lg-6 loginButtonDiv">
               <button class="btn btn-default full-width">Login</button>
             </div>
           </div>
@@ -35,7 +35,7 @@
                   	{"name":"email", "label":"Email", "type":"email", "attrMap":{"required":"required"}}
                     {"name":"password", "label":"Password", "type":"password", "attrMap":{"required":"required"}}
                   ]
-                  buttons = [{"class":"btn,btn-sm,btn-default", "id":"signUpBtn", "name":"Sign Up"}] />
+                  buttons = [{"class":"btn,btn-sm,btn-default,cursor-pointer", "id":"signUpBtn", "name":"Sign Up"}] />
             </div>
           </div>
           <div class="loginFormDiv hide">
@@ -45,7 +45,7 @@
                     {"name":"email", "label":"Email", "type":"email", "attrMap":{"required":"required"}}
                     {"name":"password", "label":"Password", "type":"password", "attrMap":{"required":"required"}}
                   ]
-                  buttons = [{"class":"btn,btn-sm,btn-default,loginBtn", "id":"loginBtn", "name":"Login"}] />
+                  buttons = [{"class":"btn,btn-sm,btn-default,loginBtn,cursor-pointer", "id":"loginBtn", "name":"Login"}] />
             </div>
           </div>
         </div>

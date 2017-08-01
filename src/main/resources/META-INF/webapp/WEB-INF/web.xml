@@ -20,10 +20,9 @@
 		</param-value>
 	</context-param>
 	
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>jersey-api</servlet-name>
 		<servlet-class>
-			<!-- com.sun.jersey.spi.container.servlet.ServletContainer -->
 			com.sun.jersey.spi.spring.container.servlet.SpringServlet
 		</servlet-class>
 		<init-param>
@@ -31,6 +30,22 @@
           <param-value>server.dummy.rest</param-value>
        </init-param>
        <load-on-startup>1</load-on-startup>
+	</servlet> -->
+	<!-- moved from com.sun.jersey to org.glassfish.jersey to support beanparam -->
+	<servlet>
+		<servlet-name>jersey-api</servlet-name>
+		<servlet-class>
+			org.glassfish.jersey.servlet.ServletContainer
+		</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>server.dummy.rest.RestConfig</param-value>			
+		</init-param>	
+		 <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>	
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
 	<servlet-mapping>
